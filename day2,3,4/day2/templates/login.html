@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>   
+</head>
+{% load static %}
+{%block content%}
+<body>
+    <div class ="container">
+        <h3 class="text-center mt-3">login</h3>
+    
+    <form method="post">
+        {%csrf_token%}
+        <div class = "container m-1 p-1">
+            
+                <div class="mt-3 ">
+                    <input name ="username" type="text" class="form-control" placeholder="username"> 
+                     <input name ="password" type="password" class="form-control" placeholder="password"> 
+                    
+                </div>
+                <div class="mt-3 d-flex flex-row justify-content-between align-items-center">
+                    <input class = "btn btn-dark btn-block" type="submit" value="login">
+        
+    
+            </div>
+            </div>
+    </form>
+    </div>
+    <div style="color:red">
+        {{errormsg}}
+    </div>
+    {%endblock%}
+</body>
+</html>
+
